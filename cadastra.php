@@ -17,7 +17,7 @@
 
     include_once "conecta.php";
 
-    if(empty($_POST['nome']) || empty($_POST['senha']) || empty($_POST['email'])|| empty($_POST['cpf'])|| empty($_POST['telefone'])|| empty($_POST['sexo'])|| empty($_POST['data_nasc'])|| empty($_POST['cidade'])|| empty($_POST['estado'])|| empty($_POST['endereco'])) {
+    if(empty($_POST['nome']) || empty($_POST['senha']) || empty($_POST['email'])|| empty($_POST['cpf'])|| empty($_POST['telefone'])|| empty($_POST['sexo'])|| empty($_POST['data_nasc'])|| empty($_POST['endereco'])) {
 	header('Location: cadastro.html');
 	exit();
 }
@@ -29,12 +29,10 @@
     $telefone     = $_POST['telefone'];
     $sexo     = $_POST['sexo'];
     $data_nasc     = $_POST['data_nasc'];
-    $cidade     = $_POST['cidade'];
-    $estado     = $_POST['estado'];
     $endereco     = $_POST['endereco'];
 
-$sql = "INSERT INTO usuarios(nome,senha,email,cpf,telefone,sexo,data_nasc,cidade,estado,endereco) VALUES
-('$nome','$senha','$email','$cpf','$telefone','$sexo','$data_nasc','$cidade','$estado','$endereco')";
+$sql = "INSERT INTO usuarios(nome,senha,email,cpf,telefone,sexo,data_nasc,endereco) VALUES
+('$nome','$senha','$email','$cpf','$telefone','$sexo','$data_nasc','$endereco')";
 
         $resultado = mysqli_query($conexao,$sql);
         echo "Você foi cadastrado com Sucesso!!";
